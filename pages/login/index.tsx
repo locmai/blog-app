@@ -1,9 +1,13 @@
-import MasterLayout from '@components/Layout'
-import LoginForm from '@components/LoginForm'
-function LoginPage() {
-  return <MasterLayout title="About" page="about">
-    <LoginForm></LoginForm>
-  </MasterLayout>
-} 
+import MasterLayout from "@components/Layout";
+import LoginForm from "@components/LoginForm";
+import { NextPage } from "next";
 
-export default LoginPage
+const LoginPage: NextPage = () => {
+  return (
+    <MasterLayout title="About" page="about">
+      <LoginForm />
+    </MasterLayout>
+  );
+};
+
+export default LoginPage;

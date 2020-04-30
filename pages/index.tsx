@@ -1,23 +1,37 @@
-import MasterLayout from '@components/Layout'
-import { MockArticles } from '@mocks/MockData'
-import { Card, Row, Col } from 'antd'
+import * as React from "react";
+import MasterLayout from "@components/Layout";
+import { MockArticles } from "@mocks/MockData";
+import { Card } from "antd";
+import styled from "styled-components";
+import { NextPage } from "next";
 
-const Articles = () => {
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  width: 100%;
+`;
 
-  const cards = []
-
+const Articles: React.FunctionComponent = () => {
   const { Meta } = Card;
 
-  MockArticles.forEach((article) => cards.push(<Col xs={12} xl={8}><Card title={article.title} key={article._id}>{article.short_description}</Card> </Col>))
   return (
-    <Row gutter={[8, 16]}>
-      {cards}
-    </Row>
-  )
-}
+    <Container>
+      {MockArticles.map((article) => (
+        <Card title={article.title} key={article._id}>
+          {article.short_description}
+        </Card>
+      ))}
+    </Container>
+  );
+};
 
-function HomePage() {
-  return <MasterLayout title="Home"><Articles></Articles></MasterLayout>
-}
+const HomePage: NextPage = () => {
+  return (
+    <MasterLayout title="Home">
+      <Articles></Articles>
+    </MasterLayout>
+  );
+};
 
-export default HomePage
+export default HomePage;
