@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{CQoo:function(n,o,t){"use strict";t.r(o);var e=t("q1tI"),c=t.n(e),r=t("apO0"),i=c.a.createElement;o.default=function(){return i(r.a,{title:"Projects",page:"projects"},"Projects")}},UY2Y:function(n,o,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/projects",function(){return t("CQoo")}])}},[["UY2Y",0,1,2]]]);
